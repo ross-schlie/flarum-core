@@ -16,7 +16,9 @@ use Flarum\Foundation\ContainerUtil;
 use Flarum\Post\Filter as PostFilter;
 use Flarum\Post\Filter\PostFilterer;
 use Flarum\User\Filter\UserFilterer;
+use Flarum\Group\Filter\GroupFilterer;
 use Flarum\User\Query as UserQuery;
+use Flarum\Group\Query as GroupQuery;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
 
@@ -40,6 +42,9 @@ class FilterServiceProvider extends AbstractServiceProvider
                 UserFilterer::class => [
                     UserQuery\EmailFilterGambit::class,
                     UserQuery\GroupFilterGambit::class,
+                ],
+                GroupFilterer::class => [
+                    GroupQuery\NameFilterGambit::class,
                 ],
                 PostFilterer::class => [
                     PostFilter\AuthorFilter::class,

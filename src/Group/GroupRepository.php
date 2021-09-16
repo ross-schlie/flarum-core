@@ -10,6 +10,7 @@
 namespace Flarum\Group;
 
 use Flarum\User\User;
+use Flarum\Group\Group;
 use Illuminate\Database\Eloquent\Builder;
 
 class GroupRepository
@@ -21,11 +22,11 @@ class GroupRepository
      */
     public function query()
     {
-        return User::query();
+        return Group::query();
     }
 
     /**
-     * Find a user by ID, optionally making sure it is visible to a certain
+     * Find a group by ID, optionally making sure it is visible to a certain
      * user, or throw an exception.
      *
      * @param int $id
