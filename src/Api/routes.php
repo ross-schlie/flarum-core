@@ -217,6 +217,12 @@ return function (RouteCollection $map, RouteHandlerFactory $route) {
         $route->toController(Controller\ListGroupsController::class)
     );
 
+    $map->get(
+        '/groups/{id}',
+        'groups.show',
+        $route->toController(Controller\ShowGroupController::class)
+    );
+
     // Create a group
     $map->post(
         '/groups',
